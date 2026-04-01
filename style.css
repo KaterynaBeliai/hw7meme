@@ -1,0 +1,120 @@
+/*selectors box model*/
+* {
+    margin: 13px; 
+    box-sizing: border-box; 
+    font-family: "Comic Sans MS", cursive;
+}
+
+body {
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+/*selectors*/
+header.header-chaos {
+    background-color: purple;
+    height: 150px;
+    position: relative;
+    border: 10px dashed lime; /* Ужасная рамка */
+}
+
+header h1 {
+    font-size: 80px;
+    margin: 0;
+    padding-top: 20px;
+    position: absolute;
+    left: -20px; /* Вылазит за край */
+}
+
+/*flexbox */
+.nav-list {
+    display: flex;
+    justify-content: space-between; 
+    align-items: baseline;
+    list-style: none;
+    width: 120%;
+}
+
+.flex-mess {
+    display: flex;
+    flex-wrap: wrap-reverse; /*reverse */
+    border: 1px solid blue;
+    padding: 0;
+}
+
+/*combinator*/
+.flex-mess > div {
+    flex-grow: 5;
+    border-right: 2px solid blue;
+    padding: 5px;
+    height: 30px;
+}
+
+/*positioning*/
+.welcome-section {
+    position: relative;
+    top: -40px;
+}
+
+.fixed-ugly {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    background: black;
+    color: white;
+    writing-mode: vertical-rl;
+    padding: 10px;
+}
+
+.sticky-annoyance {
+    position: sticky;
+    top: 0;
+    background: yellow;
+    width: fit-content;
+}
+
+/*float old*/
+.random-label {
+    float: left;
+    background: yellow;
+    margin-left: 200px;
+    font-weight: bold;
+}
+
+/* pseudo class and elements */
+.box:nth-child(even) {
+    background-color: #e0e0ff; 
+}
+
+.highlight::before {
+    content: "!!!";
+    color: red;
+}
+
+.glitch-text:hover {
+    color: fuchsia;
+}
+
+/*selectors */
+.email-row ~ .warning {
+    background-color: lime;
+    display: inline-block;
+    padding: 5px;
+}
+
+.contact-box {
+    border-top: 30px solid pink;
+    margin-top: 100px;
+}
+
+/*media Queries */
+@media (max-width: 600px) {
+    * {
+    
+        color: yellow;
+    }
+    
+    .flex-mess {
+        display: block; /* kill flexbox */
+    }
+}
